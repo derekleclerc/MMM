@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Trainer | [Your Name]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #2b2b2b;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav {
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #2b2b2b;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        nav a:hover {
+            color: #ff5733;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about,
+        .services,
+        .testimonials,
+        .booking,
+        .contact {
+            margin: 40px 0;
+        }
+
+        h2 {
+            color: #2b2b2b;
+            margin-bottom: 10px;
+        }
+
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 20px auto;
+            object-fit: cover;
+            border: 5px solid #ff5733;
+        }
+
+        footer {
+            background-color: #2b2b2b;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .services-list {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .service {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 30%;
+        }
+
+        .contact input, .contact textarea, .booking input, .booking select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact button, .booking button {
+            padding: 10px 20px;
+            background-color: #ff5733;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact button:hover, .booking button:hover {
+            background-color: #ff7853;
+        }
+
+        #paypal-button-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>[Your Name] Personal Trainer</h1>
+        <p>Transform your body, transform your life!</p>
+    </header>
+
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#services">Services</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#booking">Book a Session</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <img src="https://via.placeholder.com/200" alt="Personal Trainer" class="profile-pic">
+        <p>Hi, I'm [Your Name], a certified personal trainer with over [X] years of experience in helping people achieve their fitness goals. Whether you're looking to lose weight, build muscle, or improve overall fitness, I'm here to guide you every step of the way!</p>
+    </section>
+
+    <section id="services" class="services">
+        <h2>My Services</h2>
+        <div class="services-list">
+            <div class="service">
+                <h3>Personal Training</h3>
+                <p>1-on-1 personalized workout plans tailored to your goals and fitness level.</p>
+            </div>
+            <div class="service">
+                <h3>Nutrition Coaching</h3>
+                <p>Custom meal plans and nutrition guidance to fuel your workouts and help you reach your goals faster.</p>
+            </div>
+            <div class="service">
+                <h3>Online Coaching</h3>
+                <p>Workout and nutrition plans you can follow at your convenience, with regular check-ins and support.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <h2>What My Clients Say</h2>
+        <p>"[Your Name] is the best! I've lost 20 lbs and feel stronger than ever!" - Client A</p>
+        <p>"Thanks to [Your Name]'s training, I've gained confidence and feel amazing!" - Client B</p>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+        <h2>Book a Training Session</h2>
+        <form id="bookingForm">
+            <label for="service">Choose a Service:</label>
+            <select id="service" required>
+                <option value="">--Select a Service--</option>
+                <option value="Personal Training">Personal Training</option>
+                <option value="Nutrition Coaching">Nutrition Coaching</option>
+                <option value="Online Coaching">Online Coaching</option>
+            </select>
+
+            <label for="date">Choose a Date:</label>
+            <input type="date" id="date" required>
+
+            <label for="time">Choose a Time:</label>
+            <input type="time" id="time" required>
+
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" placeholder="Your Name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" placeholder="Your Email" required>
+
+            <button type="submit">Confirm Booking</button>
+        </form>
+
+        <div id="paypal-button-container"></div>
+        <div id="bookingConfirmation" style="margin-top: 20px;"></div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form action="https://example.com/form-handler" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 [Your Name] Personal Trainer | Follow me on <a href="https://instagram.com" style="color: #ff5733;">Instagram</a></p>
+    </footer>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=USD"></script>
+
+    <script>
+        // Handle booking form submission
+        document.getElementById('bookingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get form values
+            const service = document.getElementById('service').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            // Show booking confirmation (without payment yet)
+            const confirmationMessage = `
+                Thank you, ${name}! Your ${service} session is booked for ${date} at ${time}.
+                Please complete the payment below to confirm your session.
+            `;
+            document.getElementById('bookingConfirmation').innerHTML = `<p>${confirmationMessage}</p>`;
+
+            // Show PayPal button after the form is submitted
+            paypal.Buttons({
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            description: `${service} session with [Your Name]`,
+                            amount: {
+                                value: '50.00' // Replace with your service price
+                            }
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        alert('Payment completed! Thank you ' + details.payer.name.given_name);
+                        // Further actions like saving the booking details to a database can be added here
+                    });
+                }
+            }).render('#paypal-button-container');
+        });
+    </script>
+</body>
+</html>
